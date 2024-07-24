@@ -14,7 +14,7 @@ const register_name = document.getElementById("register_name")
 const register_image = document.getElementById("register_image")
 const registerbtn_login = document.getElementById("registerbtn_login")
 // console.log(register_user);
-
+logOut_btn.style.display="none"
 onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log("User Is Login");
