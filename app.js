@@ -33,6 +33,7 @@ onAuthStateChanged(auth, (user) => {
         logOut_btn.style.display="none"
         signinbtn_login.style.display="block"
         registerbtn_login.style.display="block"
+        register_image.style.display="none"
       // User is signed out
       // ...
     }

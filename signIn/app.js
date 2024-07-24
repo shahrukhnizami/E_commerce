@@ -23,7 +23,7 @@ register_btn.addEventListener("click",()=>{
   // Signed in 
   const user = userCredential.user;
   window.location.href="../index.html";
-  signinbtn_login.style.display="none"
+  // signinbtn_login.style.display="none"
   // ...
 })
 .catch((error) => {
