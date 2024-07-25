@@ -11,6 +11,10 @@ import { getFirestore,
           doc, 
           setDoc,
           getDoc,
+          onSnapshot ,
+
+          collection
+          ,
   } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { 
          getAuth,
@@ -45,7 +49,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 // console.log("Storege---->",storage);
-console.log("Database------>",db);
+// console.log("Database------>",db);
 
 
 export{
@@ -63,6 +67,8 @@ export{
     signOut ,
     auth,
     getDoc,
+    collection,
+    onSnapshot ,
     
 }
    
