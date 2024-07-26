@@ -33,7 +33,7 @@ register_form.addEventListener("submit", function(e){
  
   // Create Acount
   register_btn.ariaDisabled= true;
-  register_btn.innerText="Please Waite Creat Your Acount .....";
+  register_btn.innerText="Please Wait .....";
   createUserWithEmailAndPassword( auth,email,pasword).then((user)=>{
     console.log("User Id",user.user.uid);
     

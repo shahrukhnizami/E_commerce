@@ -139,15 +139,7 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-h5::selection,
-h6::selection
-{
 
-}
 ::-webkit-input-placeholder
 {
 	font-size: 16px !important;
@@ -360,6 +352,7 @@ section
 .currency_selection li a:hover
 {
 	color: #b5aec4;
+	width: 150px;
 }
 .currency_selection li:last-child a
 {
@@ -375,7 +368,7 @@ section
 	display: inline-block;
 	position: relative;
 	min-width: 50px;
-	border-right: solid 1px #33333b;
+	/* border-right: solid 1px #33333b; */
 	padding-right: 20px;
 	padding-left: 20px;
 	text-align: center;
@@ -445,6 +438,7 @@ section
 .language_selection li:last-child a
 {
 	border-bottom: none;
+	width: 180px;
 }
 
 /*********************************
@@ -481,13 +475,13 @@ section
 	top: 100%;
 }
 .account_selection
-{
+{	
 	display: block;
 	position: absolute;
 	right: 0;
 	top: 120%;
 	margin: 0;
-	width: 100%;
+	width: 120px;
 	background: #FFFFFF;
 	visibility: hidden;
 	opacity: 0;
@@ -501,12 +495,14 @@ section
 }
 .account_selection li
 {
+	
 	padding-left: 10px;
 	padding-right: 10px;
 	line-height: 50px;
 }
 .account_selection li a
 {
+	width: 100px;
 	display: block;
 	color: #232530;
 	border-bottom: solid 1px #dddddd;
@@ -520,14 +516,17 @@ section
 .account_selection li a:hover
 {
 	color: #b5aec4;
+	
 }
 .account_selection li:last-child a
 {
 	border-bottom: none;
+	
 }
 .account_selection li a i
 {
 	margin-right: 10px;
+	
 }
 
 /*********************************
@@ -578,6 +577,7 @@ section
 {
 	display: inline-block;
 	text-align: center;
+	background-color: white;
 }
 .navbar_user li a
 {
@@ -721,7 +721,7 @@ section
 	display: block;
 	position: relative;
 	border-bottom: solid 1px #b5aec4;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 }
 .menu_item > a
 {
@@ -982,10 +982,7 @@ section
 {
 	margin-left: 0px;
 }
-.grid_sorting_button:last-child
-{
 
-}
 .grid_sorting_button.active:hover
 {
 	background: #FE7C7F !important;
@@ -1047,6 +1044,7 @@ section
 .product_image img
 {
 	width: 100%;
+	height: 250px;
 }
 .product_info
 {

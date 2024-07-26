@@ -63,14 +63,17 @@
 										<li><a href="#">Spanish</a></li>
 									</ul>
 								</li>
-								<li class="account">
-									<a href="#">
+								<img id="register_image" src="#" width="30px" height="30px">
+								<li  class="account">
+									
+									<a id="register_name" href="#">
 										My Account
 										<i class="fa fa-angle-down"></i>
 									</a>
 									<ul class="account_selection">
-										<li><a href="../signIn/index.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-										<li><a href="../register/index.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										<li id="logOut_btn"><a href=""> <i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a></li>
+										<li id="signinbtn_login"><a href="/signIn/index.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+										<li id="registerbtn_login"><a href="/register/index.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -99,8 +102,23 @@
 								<li><a href="contact.html">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+								<i class="fa fa-search" aria-hidden="true"></i>
+								
+								
+								
+								
+								<li class="user_r">
+									<a href="#">
+										<i class="fa fa-user user_r" aria-hidden="true"></i>
+									</a>
+									<ul class="user_r_selection">
+										<li><a href="#">Add New Product</a></li>										
+									</ul>
+								</li>
+
+
+
+								
 								<li class="checkout">
 									<a href="#">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -235,19 +253,19 @@
 
 			<!-- </div> -->
 
-			<div class="col-lg-8 get_in_touch_col">
+			<div class="col-lg-6 get_in_touch_col">
 				<div class="get_in_touch_contents">
-					<h1>Add Product</h1>
+					<h1 class="py-3">Add New Product</h1>
 					<p>Fill out the form below to recieve a free and confidential.</p>
 					<form id="add_product_form">
 						<div>
 							<label> Product Image</label> 
 							<input id="product_img" class="form-control " type="file"  required="required"  placeholder="sdsf">
                             <!--  <input id="product_img" class="form_input input_name input_ph"  type="file" required="required"> -->
-							<input id="product_titile" class="form_input input_name input_ph" value="Pocket cotton sweatshirt" type="text"   placeholder="Product Title" required="required" data-error="Product title required.">
+							<input id="product_titile" class="form_input input_name input_ph"  type="text"   placeholder="Product Title" required="required" data-error="Product title required.">
 							<!-- <input id="product_dec" class="form_input input_email input_ph" type="text"  placeholder="Product Description" required="required" data-error="Product description is required."> -->
-							<textarea id="product_dec" class="input_ph input_message"  placeholder="Product Description" rows="3" required data-error="Product description is required.">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</textarea>
-							<input id="product_price" class="form_input input_website input_ph" type="text" value="495.00" placeholder="Price" required="required" data-error="price is required.">
+							<textarea id="product_dec" class="input_ph input_message"  placeholder="Product Description" rows="3" required data-error="Product description is required."></textarea>
+							<input id="product_price" class="form_input input_website input_ph" type="text" placeholder="Price" required="required" data-error="price is required.">
 							<!-- <input id="product_category" class="form_input input_website input_ph" type="text" value="Men" placeholder="category" required="required" data-error="category is required."> -->
 							<!-- <input id="register_confrm_password" class="form_input input_website input_ph" type="password"  name="password" placeholder="Confrm Password" required="required" data-error="password is required."> -->
 							

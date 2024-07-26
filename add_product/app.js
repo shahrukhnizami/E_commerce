@@ -1,6 +1,7 @@
 import{
-  //   auth,
-//     onAuthStateChanged,
+    auth,
+    getDoc ,
+    onAuthStateChanged,
 //     createUserWithEmailAndPassword, 
     doc, 
     setDoc,
@@ -13,11 +14,15 @@ import{
 
 
 
-
+const register_name = document.getElementById("register_name")
+const register_image = document.getElementById("register_image")
 const add_product_form = document.getElementById("add_product_form")
+const logOut_btn = document.getElementById("logOut_btn")
 const upload_btn = document.getElementById("Upload_btn")
+// const add_P = document.getElementById("add_P")
 
 add_product_form.addEventListener("submit", function(e){
+  
   e.preventDefault();
   console.log(e);
   const p_image = e.target[0].files[0];
@@ -43,6 +48,8 @@ add_product_form.addEventListener("submit", function(e){
 //     console.log("User Id",user.user.uid);
     
     // Upload Image
+    
+ 
     const add_product_ref= ref(storage,`product/${p_title}`);
     uploadBytes(add_product_ref,     p_image ).then(()=>{
             console.log("Product Image is Uploaded");
@@ -78,78 +85,48 @@ add_product_form.addEventListener("submit", function(e){
 //   console.log(register_info);
   })
   
-// // Create Acount
-// // register_btn.ariaDisabled= true;
-// // register_btn.innerText="..Please Wait";
 
-//   // createUserWithEmailAndPassword( auth, email,pasword) .then((user)=>{
-//   //   console.log("User Id=>>",user.user.uid);
-//     // Upload Image
 
-//     // const register_user_ref= ref(storage,`regiter_user/${user.user.uid}`);
-//     // // Upload Image
-//     //     uploadBytes(register_user_ref, image).then(()=>{
-//     //       console.log("User Image is Uploaded");
-//     //       // Download Image Link
-//     //           getDownloadURL(register_user_ref).then((url)=>{console.log("Url Is Build",url)
-//     //             // updated Object
-//     //           register_info.image = url;
-//     //           // Created User Doc Reference
-//     //           const registerDbRef = doc(db,"register_users",user.user.uid)
-//     //           // set doc to db
-//     //           setDoc(registerDbRef,register_info).then(()=>{console.log("user object is Updated in db");
-//     //                     // window.location.href="./signIn/index.html";
-                       
-//     //                   })
-                      
-
-//     //           })
-//     //           .catch((error)=>{console.log("Firebase Url Nhi de raha",error);
-                       
-//     //           })
-              
-//     //     })
-//     //     .catch((err)  => {console.log("Error In Uploading Image",err);})
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("User Is Login");
+        signinbtn_login.style.display="none"
+        registerbtn_login.style.display="none"
+        logOut_btn.style.display="block"
+        
+        // register_image.style.display="block"
+        // add_P.style.visibility="display"
+        // register_name.innerText= ;      //   window.location.href = "index.html"
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+      const uid = user.uid;
+      register_info(uid)
     
-   
+      // ...
+    } else {
+        console.log("User is not Login");
+        logOut_btn.style.display="none"
+        signinbtn_login.style.display="block"
+        registerbtn_login.style.display="block"
+        // register_image.style.display="none"
+        
+        // add_P.style.visibility="hidden"
+        
+      // User is signed out
+      // ...
+    }
+  });
 
-// //   }).catch((error)=> alert(error))
+  
+  function register_info(uid){
+    const register_user_ref = doc(db,"regiter_user",uid)
+    getDoc(register_user_ref).then((data)=>{
+        console.log("data", data.id);
+        console.log("data", data.data());
+        console.log("data", data.data().name);
+        register_name.innerText= data.data().name
+        register_image.src=data.data().image
+        
+    })
+  }
 
-// // })
-
-
-
-// // onAuthStateChanged(auth, (user) => {
-// //   if (user) {
-// //     console.log("User Login");
-// //     // User is signed in, see docs for a list of available properties
-// //     // https://firebase.google.com/docs/reference/js/auth.user
-// //     const uid = user.uid;
-// //     // ...
-// //   } else {
-// //     console.log("User is signed out");
-// //     // window.location.href = "/index.html"
-// //     // User is signed out
-// //     // ...
-// //   }
-// // });
-// // function RegisterUserAcount() {
-// //     createUserWithEmailAndPassword(auth, email_Signup.value, Password.value)
-// //     .then((userCredential) => {
-// //       // Signed up 
-// //       const user = userCredential.user;
-// //       console.log("User", user);
-
-
-// //       // ...
-// //     })
-// //     .catch((error) => {
-// //       const errorCode = error.code;
-// //       const errorMessage = error.message;
-// //       console.log("User not LOgin")
-// //       window.location.href = "./in"
-// //       alert(error.message)
-// //       // ..
-// //     });
-
-// // }
