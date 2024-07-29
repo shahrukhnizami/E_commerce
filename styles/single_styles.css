@@ -137,15 +137,7 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-h5::selection,
-h6::selection
-{
 
-}
 ::-webkit-input-placeholder
 {
 	font-size: 16px !important;
@@ -719,7 +711,7 @@ section
 	display: block;
 	position: relative;
 	border-bottom: solid 1px #b5aec4;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 }
 .menu_item > a
 {
@@ -881,10 +873,10 @@ section
 	background: #fe4c50;
 	content: '';
 }
-.product_details_title p
+/* .product_details_title p
 {
 	color: #;
-}
+} */
 
 /*********************************
 4. Breadcrumbs
@@ -1125,6 +1117,12 @@ section
 	border-radius: 2px;
 	cursor: pointer;
 }
+.Cart_circle_img{
+	width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+}
 .product_favorite:hover::after
 {
 	color: #fe4c50;
@@ -1132,12 +1130,13 @@ section
 .product_favorite::after
 {
 	font-family: 'FontAwesome';
-	content:'\f08a';
+	content:'\f014';
 	font-size: 14px;
 }
 .product_favorite.active::after
 {
-	content:'\f004';
+	content:'\f014';
+	
 	color: #fe4c50;
 }
 
@@ -1156,10 +1155,7 @@ section
 	margin-top: 66px;
 	margin-bottom: 66px;
 }
-.tabs
-{
 
-}
 .tab
 {
 	margin-right: 50px;
@@ -1200,10 +1196,7 @@ section
 7.1 Description
 *********************************/
 
-.desc_col
-{
 
-}
 .tab_title
 {
 	margin-bottom: 98px;
